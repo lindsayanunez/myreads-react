@@ -2,6 +2,18 @@ import React, {Component} from 'react'
 // import * as BooksAPI from './BooksAPI'
 import Book from './components/Book';
 
+class BookShelf extends Component{
+  state = {
+
+  }
+  render()
+  return{
+
+  }
+}
+
+export default BookShelf;
+
 <div className="bookshelf">
                   <h2 className="bookshelf-title">Currently Reading</h2>
                   <div className="bookshelf-books">
