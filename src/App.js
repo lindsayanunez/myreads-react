@@ -14,6 +14,12 @@ class BooksApp extends React.Component {
     showSearchPage: false
   }
 
+  componentDidMount = () =>{
+    if(this.state.newBook){
+      this.refreshAllBooks();
+    }
+  }
+
   render() {
     return (
       <BookCase />
