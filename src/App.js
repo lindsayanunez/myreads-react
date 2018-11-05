@@ -20,6 +20,18 @@ class BooksApp extends React.Component {
     }
   }
 
+  refreshAllBooks = () => {
+    //takes books on shelf and updates with sorted list.
+    BooksAPI
+    .getAll()
+    .then(last) =>{
+      this.setState({
+        books: BookUtility.sortAllBooks(list),
+        newBook: false
+      });
+    });
+  }
+
   render() {
     return (
       <BookCase />
