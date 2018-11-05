@@ -34,7 +34,7 @@ class BooksApp extends React.Component {
 
   render() {
     return (
-      <BookCase />
+      <BookCase books=(this.state.books) onRefreshAllBooks =(this.refreshAllBooks) />
     )
   }
 }
