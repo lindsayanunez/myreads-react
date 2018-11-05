@@ -1,4 +1,7 @@
-BookCase.js
+import React, {Component} from 'react'
+// import * as BooksAPI from './BooksAPI'
+import BookShelf from './components/BookShelf';
+
 
       <div className="app">
         {this.state.showSearchPage ? (
