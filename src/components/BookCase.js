@@ -6,6 +6,14 @@ class BookCase extends Component{
   state ={
 
   }
+
+  componentDidMount = () =>{
+    //Updates list of allthe books
+    this
+    .props
+    .onRefreshAllBooks();
+  }
+
   render()
   return(
     <div className="app">
