@@ -4,9 +4,12 @@ import Changer from './components/Changer';
 
 class Book extends Component{
   state ={
+    shelfSelection: this.props.book.shelf || 'none'
 
   }
   render (){
+    //If there is more than one author in the array join them to one string
+
     return(
       <li>
         <div className="book">

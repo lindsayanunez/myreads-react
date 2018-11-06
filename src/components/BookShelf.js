@@ -4,9 +4,11 @@ import Book from './components/Book';
 
 class BookShelf extends Component{
   state = {
-
   }
+
   render(){
+
+
     return (
       <div className="bookshelf">
         <h2 className="bookshelf-title">Currently Reading</h2>
@@ -18,7 +20,7 @@ class BookShelf extends Component{
             .books
             .map(book =>(
               <li key={book.id}>
-              <Book book={book} onChangeShelf={this.props.onChangeShelf}/>
+              // <Book book={book} onChangeShelf={this.props.onChangeShelf}/>
               </li>
             ))}
           </ol>
