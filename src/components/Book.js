@@ -28,7 +28,7 @@ class Book extends Component{
             <Changer />
           </div>
           <div className="book-title">{this.props.book.title}</div>
-          <div className="book-authors">Harper Lee</div>
+          <div className="book-authors">{authors}</div>
         </div>
       </li>
     )
