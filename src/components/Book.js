@@ -9,6 +9,12 @@ class Book extends Component{
   }
   render (){
     //If there is more than one author in the array join them to one string
+    const authors = this.props.book.authors && this
+      .props.book.authors.join(' | ');
+
+    //Create the thumbnail URL
+     let url = {this.props.book.imageLinks
+      && `url(${this.props.book.imageLinks.thumbnail})`;
 
     return(
       <li>
