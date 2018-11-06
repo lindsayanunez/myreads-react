@@ -20,11 +20,14 @@ class Book extends Component{
       <li>
         <div className="book">
           <div className="book-top">
+          <button className="book-cover-button">
             <div className="book-cover" style={{
               width: 128,
               height: 193,
               backgroundImage: url
               }}></div>
+          </button>
+
             <Changer />
           </div>
           <div className="book-title">{this.props.book.title}</div>
