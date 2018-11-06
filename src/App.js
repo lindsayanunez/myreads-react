@@ -24,7 +24,7 @@ class BooksApp extends React.Component {
     //takes books on shelf and updates with sorted list.
     BooksAPI
     .getAll()
-    .then(last) =>{
+    .then((list) =>{
       this.setState({
         books: BookUtility.sortAllBooks(list),
         newBook: false
@@ -34,7 +34,7 @@ class BooksApp extends React.Component {
 
   render() {
     return (
-      <BookCase books=(this.state.books) onRefreshAllBooks =(this.refreshAllBooks) />
+      <BookCase books={this.state.books} onRefreshAllBooks ={this.refreshAllBooks} />
     )
   }
 }
