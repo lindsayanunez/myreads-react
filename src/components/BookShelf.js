@@ -20,7 +20,9 @@ class BookShelf extends Component{
             .books
             .map(book =>(
               <li key={book.id}>
-              // <Book book={book} onChangeShelf={this.props.onChangeShelf}/>
+              <Book
+                book={book}
+                onswitchShelf={this.props.onSwitchShelf}/>
               </li>
             ))}
           </ol>
