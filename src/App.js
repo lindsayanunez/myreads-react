@@ -42,7 +42,7 @@ class BooksApp extends React.Component {
       .state.books.slice(0);
 
       //Check list for the book
-      const books = updatedList.filter( listbook => listBook.id === book.id)
+      const books = updatedList.filter(listbook => listBook.id === book.id);
         if (books.length){
           //Update books that are already on the shelf
           books[0].shelf = shelf;

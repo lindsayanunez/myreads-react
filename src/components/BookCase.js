@@ -62,7 +62,7 @@ class BookCase extends Component{
               {shelves && shelves.map((shelf) => (
                 <BookShelf
                 key={shelf.name}
-                shelf={shelf} />))}
+                shelf={shelf} onswitchShelf={this.props.onSwitchShelf} />))}
               </div>
               </div>
             <div className="open-search">
