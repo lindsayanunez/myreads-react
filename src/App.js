@@ -58,7 +58,10 @@ class BooksApp extends React.Component {
 
   render() {
     return (
-      <BookCase books={this.state.books} onRefreshAllBooks ={this.refreshAllBooks} />
+      <BookCase
+        books={this.state.books}
+        onRefreshAllBooks ={this.refreshAllBooks}
+        onswitchShelf={this.switchShelf} />
     )
   }
 }
