@@ -59,10 +59,22 @@ class BooksApp extends React.Component {
 
   render() {
     return (
-      <BookCase
-        books={this.state.books}
-        onRefreshAllBooks ={this.refreshAllBooks}
-        onswitchShelf={this.switchShelf} />
+      <div className="app">
+      <Route
+        exact
+        path='/'
+          render={( () => (<BookCase
+          books={this.state.books}
+          onRefreshAllBooks ={this.refreshAllBooks}
+          onSwitchShelf={this.switchShelf} />))}/>
+
+      <Route exact path='/search'
+        renender={(() =>
+        (<Search
+          selectedBooks={this.state.books}
+          onSwitchShelf={this.changeShelf}/>))}/>
+
+      </div>
     )
   }
 }
