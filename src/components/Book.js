@@ -17,7 +17,6 @@ class Book extends Component{
       && `url(${this.props.book.imageLinks.thumbnail})`;
 
     return(
-      <li>
         <div className="book">
           <div className="book-top">
           <button className="book-cover-button">
@@ -28,12 +27,13 @@ class Book extends Component{
               }}></div>
           </button>
 
-            <Changer />
+            <Changer
+            book={this.props.book}
+            onswitchShelf={this.props.onSwitchShelf}/>
           </div>
           <div className="book-title">{this.props.book.title}</div>
           <div className="book-authors">{authors}</div>
         </div>
-      </li>
     )
   }
 }
