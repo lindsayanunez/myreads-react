@@ -33,6 +33,29 @@ class BooksApp extends React.Component {
     });
   }
 
+  switchShelf =(book, shelf) =>{
+    BooksAPI
+    .update(book, shelf)
+    .then(respond => {
+      //update the book state, looks at list of books first
+      let updatedList = this
+      .state.books.slice(0);
+
+      //Check list for the book
+      const books = updatedList.filter( listbook => listBook.id === book.id)
+        if (books.length){
+          //Update books that are already on the shelf
+          books[0].shelf = shelf;
+        }else {
+          //sort list of books and add to the shelf
+          updatedList.push(book);
+          updatedList = BookUtility.sortAllBooks(newList);
+        }
+        //update the state
+        this.setState({books: updatedList});
+    })
+  }
+
   render() {
     return (
       <BookCase books={this.state.books} onRefreshAllBooks ={this.refreshAllBooks} />
