@@ -26,7 +26,7 @@ componentWillRecieveProps = (props) =>{
       <div className="book-shelf-changer">
         <select>
           value={this.state.shelfSelection}
-        //event listener
+          onSwitchShelf={(e) => this.onSwitchShelf(this.props.book, e.target.value)}
           <option value="move" disabled>Move to...</option>
           <option value="currentlyReading">Currently Reading</option>
           <option value="wantToRead">Want to Read</option>
