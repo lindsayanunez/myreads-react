@@ -19,7 +19,10 @@ class Book extends Component{
     return(
         <div className="book">
           <div className="book-top">
-          <button className="book-cover-button">
+          <button
+            className="book-cover-button"
+            onClick={(e) => this.props.onUpdateQuickView(e,
+              this.props.book)}>
             <div className="book-cover" style={{
               width: 128,
               height: 193,
