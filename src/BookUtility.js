@@ -22,3 +22,15 @@ export const sortAllBooks = (list) =>{
 
     return newList;
   }
+
+  export const mergeShelfSearch = (shelf, search) => {
+    //Check all the books in the search results to see if already on the shelf
+    const hashTable = {};
+    shelf.forEach(book => hashTable[book.id] = book.shelf);
+
+    search.forEach(book => {
+      book.shelf = hashTable[book.id] || 'none';
+    });
+
+    return search;
+  }
