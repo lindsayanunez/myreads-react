@@ -8,6 +8,7 @@ import Book from '.Book';
 class Search extends Component{
   state = {
     query: "",
+    books: [],
   }
 queryTimer = null;
 //update the search and the give a quarter second to display
@@ -23,7 +24,31 @@ renewSearch = () => {
     this.setState({error: false, books: []});
     return;
   }
+//Search for the query and the yield the response
+  BooksAPI
+    .search(this.state.query)
+    .then(response => {
+      let updatedList = [];
+      let updatedError = false;
+      //Check for errors, existing books, make sure a book matches the query
+      if (response === undefined || (response.error && response.error !== "empty query")){
+        updatedError = true;
+      }else if(response.length){
+        //check books already on the shelf vs search results and update shelf
+        updatedList = BooksUtility.mergeShelfSearch(this.props.selectedBooks, response);
+        updatedList = BooksUtility.sortAllBooks(updatedList);
+      }
+
+      //Set the state based on error response
+      this.setSate({error: newError, books: newList});
+    })
+
+//
+
+
 }
+
+
 
   render(){
     return(
