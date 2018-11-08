@@ -42,12 +42,16 @@ renewSearch = () => {
       //Set the state based on error response
       this.setSate({error: newError, books: newList});
     })
-
-//
-
-
 }
 
+//merge shelf - sort the shelf and lists - set the state
+
+componentRecievesProps = (props) => {
+  this.props = props;
+  let updatedList = BooksUtility.mergeShelfSearch(this.props.selectedBooks, this.state.books);
+  updatedList = BooksUtility.sortAllBooks(updatedList);
+  this.setSate({books: updatedList});
+}
 
 
   render(){
