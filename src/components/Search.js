@@ -9,15 +9,21 @@ class Search extends Component{
   state = {
     query: "",
   }
-
-changeQuery = (value) =>{
-  //update the search and the give a quarter second to display
-
+queryTimer = null;
+//update the search and the give a quarter second to display
+newQuery = (value) =>{
   clearTimeout(this.queryTimer);
   this.setState({query: value});
   this.queryTimer = setTimeout(this.updateSearch, 250);
 }
 
+renewSearch = () => {
+  //does not allow empty searches
+  if (this.state.query === ""){
+    this.setState({error: false, books: []});
+    return;
+  }
+}
 
   render(){
     return(
