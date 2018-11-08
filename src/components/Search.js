@@ -7,8 +7,18 @@ import Book from '.Book';
 
 class Search extends Component{
   state = {
-
+    query: "",
   }
+
+changeQuery = (value) =>{
+  //update the search and the give a quarter second to display
+
+  clearTimeout(this.queryTimer);
+  this.setState({query: value});
+  this.queryTimer = setTimeout(this.updateSearch, 250);
+}
+
+
   render(){
     return(
       <div className="search-books">
