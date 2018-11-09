@@ -80,6 +80,15 @@ componentRecievesProps = (props) => {
 
           <ol className="books-grid">
             // render books
+            {this.state.books && this
+              .state.books.map(book =>
+                (<li key={book.id}>
+                    <Book
+                    book={book}
+                    onSwitchShelf={this.props.onSwitchShelf}/>
+                    // onUpdateQuickView={this.updateQuick}
+                  </li>
+                  ))}
           </ol>
         </div>
       </div>
