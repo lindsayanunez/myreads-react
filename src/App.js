@@ -1,9 +1,12 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
+
 import * as BooksAPI from './BooksAPI'
 import * as BookUtility from './BookUtility'
 import './App.css'
 import BookCase from './components/BookCase';
 import Search from '.components/Search';
+
 
 class BooksApp extends React.Component {
   state = {
@@ -43,14 +46,14 @@ class BooksApp extends React.Component {
       .state.books.slice(0);
 
       //Check list for the book
-      const books = updatedList.filter(listbook => listBook.id === book.id);
+      const books = updatedList.filter(listbook => listbook.id === book.id);
         if (books.length){
           //Update books that are already on the shelf
           books[0].shelf = shelf;
         }else {
           //sort list of books and add to the shelf
           updatedList.push(book);
-          updatedList = BookUtility.sortAllBooks(newList);
+          updatedList = BookUtility.sortAllBooks(updatedList);
         }
         //update the state
         this.setState({books: updatedList});
