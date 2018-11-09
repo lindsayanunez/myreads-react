@@ -71,6 +71,11 @@ componentRecievesProps = (props) => {
           <div className = "search-error">Sorry, there has been an issue with your search. Please search again.</div>)}
 
         //Provides number of books yielded by query if no error
+        {!this.state.error && (
+          <span className ='search-count'>
+            {this.state.books.length}&nbsp; meet your search requirements.
+          </span>
+          )}
 
 
           <ol className="books-grid">
