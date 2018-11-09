@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 
 import * as BooksAPI from './BooksAPI'
 import * as BookUtility from './BookUtility'
@@ -40,7 +40,7 @@ class BooksApp extends React.Component {
   switchShelf =(book, shelf) =>{
     BooksAPI
     .update(book, shelf)
-    .then(respond => {
+    .then(response => {
       //update the book state, looks at list of books first
       let updatedList = this
       .state.books.slice(0);
