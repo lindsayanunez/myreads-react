@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 // import * as BooksAPI from './BooksAPI'
-import Changer from './components/Changer';
+import Changer from './Changer';
 
 class Book extends Component{
   state ={
@@ -13,8 +13,8 @@ class Book extends Component{
       .props.book.authors.join(' | ');
 
     //Create the thumbnail URL
-     let url = {this.props.book.imageLinks
-      && `url(${this.props.book.imageLinks.thumbnail})`;
+     let url = (this.props.book.imageLinks
+      && `url(${this.props.book.imageLinks.thumbnail})`);
 
     return(
         <div className="book">
