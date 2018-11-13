@@ -1,11 +1,10 @@
 import React from 'react';
-import {Route} from '/react-router-dom'
-
-import * as BooksAPI from './BooksAPI'
-import * as BookUtility from './BookUtility'
-import './App.css'
+import {Route} from 'react-router-dom';
+import * as BooksAPI from './BooksAPI';
+import * as BookUtility from './BookUtility';
+import './App.css';
 import BookCase from './components/BookCase';
-import Search from '/Search';
+import Search from './components/Search';
 
 
 class BooksApp extends React.Component {
@@ -23,27 +22,22 @@ class BooksApp extends React.Component {
     if(this.state.newBook){
       this.refreshAllBooks();
     }
-  }
+  };
 
   refreshAllBooks = () => {
     //takes books on shelf and updates with sorted list.
-    BooksAPI
-    .getAll()
-    .then((list) =>{
+    BooksAPI.getAll().then(list) =>{
       this.setState({
         books: BookUtility.sortAllBooks(list),
         newBook: false
       });
     });
-  }
+  };
 
   switchShelf =(book, shelf) =>{
-    BooksAPI
-    .update(book, shelf)
-    .then(response => {
+    BooksAPI.update(book, shelf).then(response => {
       //update the book state, looks at list of books first
-      let updatedList = this
-      .state.books.slice(0);
+      let updatedList = this.state.books.slice(0);
 
       //Check list for the book
       const books = updatedList.filter(listbook => listbook.id === book.id);
@@ -56,9 +50,9 @@ class BooksApp extends React.Component {
           updatedList = BookUtility.sortAllBooks(updatedList);
         }
         //update the state
-        this.setState({books: updatedList});
-    })
-  }
+        this.setState({ books: updatedList });
+    });
+  };
 
   render() {
     return (
@@ -66,19 +60,21 @@ class BooksApp extends React.Component {
       <Route
         exact
         path='/'
-          render={( () => (<BookCase
+          render={() => (
+          <BookCase
           books={this.state.books}
           onRefreshAllBooks ={this.refreshAllBooks}
-          onSwitchShelf={this.switchShelf} />))}/>
+          onSwitchShelf={this.switchShelf} />
+          )}/>
 
       <Route exact path='/search'
-        renender={(() =>
-        (<Search
+        renender={() => (
+        <Search
           selectedBooks={this.state.books}
-          onSwitchShelf={this.changeShelf}/>))}/>
-
+          onSwitchShelf={this.changeShelf}/>
+          )}/>
       </div>
-    )
+    );
   }
 }
 
