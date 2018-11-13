@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import * as BooksAPI from '../BooksAPI';
-import * as BookUtility from '../BookUtility';
-import Book from './Book';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import * as BooksAPI from "../BooksAPI";
+import * as BookUtility from "../BookUtility";
+import Book from "./Book";
 
 export default class Search extends Component {
   state = {

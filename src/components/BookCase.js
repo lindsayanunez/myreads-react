@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 // import * as BooksAPI from './BooksAPI'
 import BookShelf from './BookShelf';
 
-class BookCase extends Component{
-  state ={};
+class BookCase extends Component {
+  state = {};
 
   componentDidMount = () =>{
     //Updates list of allthe books
@@ -13,7 +13,7 @@ class BookCase extends Component{
   updateShelves = () =>{
     //Updates state of the shelves to show the correct books.
 
-    const newCurrentlyReading ={
+    const newCurrentlyReading = {
       name: "Currently Reading",
       books: this.props.books.filter(book => book.shelf === "currentlyReading")
     };
@@ -25,7 +25,7 @@ class BookCase extends Component{
       name: "Read",
       books: this.props.books.filter(book => book.shelf === "read")
     };
-    return([newCurrentlyReading, newWantToRead, newRead]);
+    return [newCurrentlyReading, newWantToRead, newRead];
   };
 
   render(){
@@ -44,7 +44,7 @@ class BookCase extends Component{
         <div className="list-books-content">
           <div>
             {shelves &&
-              shelves.map((shelf) => (
+              shelves.map(shelf => (
               <BookShelf
               key={shelf.name}
               shelf={shelf}
