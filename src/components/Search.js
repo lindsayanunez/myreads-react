@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import * as BooksAPI from '../BooksAPI';
 import * as BookUtility from '../BookUtility';
-import Book from '.Book';
+import Book from './Book';
 
 export default class Search extends Component {
   state = {
@@ -35,11 +35,11 @@ renewSearch = () => {
         updatedError = true;
       } else if (response.length) {
         //check books already on the shelf vs search results and update shelf
-        updatedList = BooksUtility.mergeShelfSearch(
+        updatedList = BookUtility.mergeShelfSearch(
           this.props.selectedBooks,
           response
           );
-        updatedList = BooksUtility.sortAllBooks(updatedList);
+        updatedList = BookUtility.sortAllBooks(updatedList);
       }
 
       //Set the state based on error response
@@ -55,7 +55,7 @@ componentRecievesProps = props => {
     this.props.selectedBooks,
     this.state.books
     );
-  updatedList = BooksUtility.sortAllBooks(updatedList);
+  updatedList = BookUtility.sortAllBooks(updatedList);
   this.setSate({ books: updatedList });
 };
 

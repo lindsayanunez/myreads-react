@@ -26,7 +26,7 @@ class BooksApp extends React.Component {
 
   refreshAllBooks = () => {
     //takes books on shelf and updates with sorted list.
-    BooksAPI.getAll().then(list) =>{
+    BooksAPI.getAll().then(list => {
       this.setState({
         books: BookUtility.sortAllBooks(list),
         newBook: false
