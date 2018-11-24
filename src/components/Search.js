@@ -4,7 +4,7 @@ import * as BooksAPI from "../BooksAPI";
 import * as BookUtility from "../BookUtility";
 import Book from "./Book";
 
-export default class Search extends Component {
+class Search extends Component {
   state = {
     query: "",
     books: [],
@@ -25,7 +25,7 @@ renewSearch = () => {
   }
 //Search for the query and the yield the response
   BooksAPI.search(this.state.query).then(response => {
-      let updatedList;
+      let updatedList = [];
       let updatedError = false;
       //Check for errors, existing books, make sure a book matches the query
       if (
@@ -78,7 +78,7 @@ componentRecievesProps = props => {
         <div className="search-books-results">
         {this.state.error && (
           <div className = "search-error">
-            Sorry, there has been an issue with your search. Please search again.
+            'Sorry, there has been an issue with your search. Please search again.'
           </div>
           )}
         {!this.state.error && (
@@ -90,7 +90,7 @@ componentRecievesProps = props => {
             {this.state.books &&
               this.state.books.map(book => (
                 <li key={book.id}>
-                    <Book book={book} onSwitchShelf={this.props.onSwitchShelf}/>
+                    <Book book={book} onChangeShelf={this.props.onChangeShelf}/>
                   </li>
                   ))}
           </ol>
@@ -99,3 +99,5 @@ componentRecievesProps = props => {
     );
   }
 }
+
+export default Search;

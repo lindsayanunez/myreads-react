@@ -32,7 +32,7 @@ class Book extends Component{
 
             <Changer
             book={this.props.book}
-            onswitchShelf={this.props.onSwitchShelf}/>
+            onChangeShelf={this.props.onChangeShelf}/>
           </div>
           <div className="book-title">{this.props.book.title}</div>
           <div className="book-authors">{authors}</div>
