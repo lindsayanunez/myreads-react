@@ -7,14 +7,14 @@ import Book from "./Book";
 class Search extends Component {
   state = {
     query: "",
-    books: [],
+    books: []
   };
 queryTimer = null;
 //update the search and the give a quarter second to display
 newQuery = value => {
   clearTimeout(this.queryTimer);
   this.setState({ query: value });
-  this.queryTimer = setTimeout(this.updateSearch, 250);
+  this.queryTimer = setTimeout(this.renewSearch, 250);
 };
 
 renewSearch = () => {
@@ -43,7 +43,7 @@ renewSearch = () => {
       }
 
       //Set the state based on error response
-      this.setSate({ error: updatedError, books: response });
+      this.setState({ error: updatedError, books: updatedList });
     });
   };
 
@@ -56,7 +56,7 @@ componentRecievesProps = props => {
     this.state.books
     );
   updatedList = BookUtility.sortAllBooks(updatedList);
-  this.setSate({ books: updatedList });
+  this.setState({ books: updatedList });
 };
 
 
