@@ -34,7 +34,7 @@ class BooksApp extends React.Component {
     });
   };
 
-  switchShelf =(book, shelf) => {
+  changeShelf =(book, shelf) => {
     BooksAPI.update(book, shelf).then(response => {
       //update the book state, looks at list of books first
       let updatedList = this.state.books.slice(0);
@@ -63,15 +63,16 @@ class BooksApp extends React.Component {
           render={() => (
           <BookCase
           books={this.state.books}
+          onChangeShelf={this.changeShelf}
           onRefreshAllBooks ={this.refreshAllBooks}
-          onSwitchShelf={this.switchShelf} />
+          />
           )}/>
 
       <Route exact path='/search'
-        renender={() => (
+        render={() => (
         <Search
           selectedBooks={this.state.books}
-          onSwitchShelf={this.changeShelf}/>
+          onChangeShelf={this.changeShelf}/>
           )}/>
       </div>
     );
