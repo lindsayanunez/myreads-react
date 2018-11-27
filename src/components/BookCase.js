@@ -12,7 +12,7 @@ class BookCase extends Component {
     this.props.onRefreshAllBooks();
   };
 
-  updateShelves = () =>{
+  updateShelfStatus = () =>{
     //Updates state of the shelves to show the correct books.
 
     const newCurrentlyReading = {
@@ -35,7 +35,7 @@ class BookCase extends Component {
   //how many books you have it will update the shelves
   let shelves = [];
   if (this.props.books && this.props.books.length)
-    shelves = this.updateShelves();
+    shelves = this.updateShelfStatus();
 
   return(
     <div className="app">
@@ -50,7 +50,7 @@ class BookCase extends Component {
               <BookShelf
               key={shelf.name}
               shelf={shelf}
-              onChangeShelf={this.props.onChangeShelf} />))}
+              onSwitchShelf={this.props.onSwitchShelf} />))}
             </div>
             </div>
           <div className="open-search">

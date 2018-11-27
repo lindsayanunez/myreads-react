@@ -6,12 +6,12 @@ class Changer extends Component{
     shelfSelection: this.props.book.shelf || "none"
   };
 
-onChangeShelf = (book, shelf) => {
+onSwitchShelf = (book, shelf) => {
   //Changes the state for the change of shelf and sends call back.
   this.setState({
     shelfSelection: shelf
   });
-  this.props.onChangeShelf(book,shelf);
+  this.props.onSwitchShelf(book,shelf);
 };
 
 componentWillReceiveProps = props => {
@@ -26,7 +26,7 @@ componentWillReceiveProps = props => {
       <div className="book-shelf-changer">
         <select
           value={this.state.shelfSelection}
-          onChange={e => this.onChangeShelf(this.props.book, e.target.value)}>
+          onChange={e => this.onSwitchShelf(this.props.book, e.target.value)}>
           <option value="move" disabled>
             Move to...
           </option>

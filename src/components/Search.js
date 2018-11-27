@@ -90,7 +90,7 @@ componentRecievesProps = props => {
             {this.state.books &&
               this.state.books.map(book => (
                 <li key={book.id}>
-                    <Book book={book} onChangeShelf={this.props.onChangeShelf}/>
+                    <Book book={book} onSwitchShelf={this.props.onSwitchShelf}/>
                   </li>
                   ))}
           </ol>

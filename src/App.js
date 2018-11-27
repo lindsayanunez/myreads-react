@@ -34,7 +34,7 @@ class BooksApp extends React.Component {
     });
   };
 
-  changeShelf =(book, shelf) => {
+  switchShelf =(book, shelf) => {
     BooksAPI.update(book, shelf).then(response => {
       //update the book state, looks at list of books first
       let updatedList = this.state.books.slice(0);
@@ -63,7 +63,7 @@ class BooksApp extends React.Component {
           render={() => (
           <BookCase
           books={this.state.books}
-          onChangeShelf={this.changeShelf}
+          onSwitchShelf={this.switchShelf}
           onRefreshAllBooks ={this.refreshAllBooks}
           />
           )}/>
@@ -72,7 +72,7 @@ class BooksApp extends React.Component {
         render={() => (
         <Search
           selectedBooks={this.state.books}
-          onChangeShelf={this.changeShelf}/>
+          onSwitchShelf={this.switchShelf}/>
           )}/>
       </div>
     );

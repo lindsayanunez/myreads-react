@@ -21,7 +21,7 @@ class Book extends Component{
           <div className="book-top">
           <button
             className="book-cover-button"
-            onClick={(e) => this.props.onUpdateQuickView(e,
+            onClick={(e) => this.props(e,
               this.props.book)}>
             <div className="book-cover" style={{
               width: 128,
@@ -32,7 +32,7 @@ class Book extends Component{
 
             <Changer
             book={this.props.book}
-            onChangeShelf={this.props.onChangeShelf}/>
+            onSwitchShelf={this.props.onSwitchShelf}/>
           </div>
           <div className="book-title">{this.props.book.title}</div>
           <div className="book-authors">{authors}</div>
