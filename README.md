@@ -1,27 +1,30 @@
-# React - My Reads Book App
+# Front-end Web Developer Nanodegree Project #7
 
-# Project Overview
+### React - My Reads Book App
 
-This is a React App that allows users to search for books and add organize them.
+## Description
 
-### How to Run
+This is a React app that allows users to organize and track their books by 'Currently Reading', 'Want to Read' and 'Read'. You can also search through a library of books.
 
-*Download or clone this repo to  machine
-*Install dependencies with npm install
-* Run npm start in the root directory to launch the server and the app
+#### Note: starter code was provided. See commits for my work.
 
-### Dependencies
-*create-react-app
-*prop-types
-*react
-*react-dom
-*react-router-dom
+## How to Launch the App
 
-##App Usage
+Download or clone this repo to your machine
+- Install dependencies with `npm install`
+- Run `npm start` in the root directory to launch the server and the app
+
+## Dependencies
+ - create-react-app
+ - prop-types
+ - react
+ - react-dom
+ - react-router-dom
+
+## How to Use the App
 Once you have the app open, by clicking on the drop down arrow on each book you can sort the books by whether you have read, want to read or are currently reading the book. Press the Plus button in the lower right hand corner to search for new books.
 
 
 ### Resources Used
 * [Starter Code from Udacity Front-End Nanodegree] (https://github.com/udacity/reactnd-project-myreads-starter)
-* [Doug Brown's Video Tutorial Part 1](https://www.youtube.com/watch?v=OcL7-7cRpkQ&feature=youtu.be)
 
