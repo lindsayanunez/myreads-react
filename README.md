@@ -1,4 +1,4 @@
-# Front-end Web Developer Nanodegree Project #7
+# Front-end Web Developer Nanodegree Project #6
 
 ### React - My Reads Book App
 
@@ -26,5 +26,5 @@ Once you have the app open, by clicking on the drop down arrow on each book you 
 
 
 ### Resources Used
-* [Starter Code from Udacity Front-End Nanodegree] (https://github.com/udacity/reactnd-project-myreads-starter)
+* [Starter Code from Udacity Front-End Nanodegree](https://github.com/udacity/reactnd-project-myreads-starter)
 
